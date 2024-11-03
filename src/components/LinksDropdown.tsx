@@ -2,14 +2,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 
 import { AlignLeft } from 'lucide-react';
 import { Button } from './ui/button';
 import { links } from '@/utils';
 import { NavLink } from 'react-router-dom';
-import { DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
 
 function LinksDropdown() {
   return (
@@ -32,7 +31,9 @@ function LinksDropdown() {
                 <NavLink
                   to={link.href}
                   className={({ isActive }) => {
-                    return `capitalize w-full ${isActive} ? 'text-primary' : ''`;
+                    return `capitalize w-full ${
+                      isActive ? 'text-primary' : ''
+                    }`;
                   }}
                 >{link.label}</NavLink>
               }
