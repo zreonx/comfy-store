@@ -1,10 +1,11 @@
-import React from 'react'
+import { Hero, FeaturedProducts } from "@/components";
 
 function Landing() {
   return (
-    <div>
-      <h1 className="text-4xl">Landing</h1>
-    </div>
+    <>
+      <Hero />
+      <FeaturedProducts />
+    </>
   );
 }
 
