@@ -12,16 +12,20 @@ function ProductsGrid() {
         const dollarsAmount = formatAsDollars(price);
         return (
           <Link to={`/products/${product.id}`} key={product.id}>
-            <Card>
+            <Card className="group">
               <CardContent className="p-4">
-                <img
-                  src={image}
-                  alt={title}
-                  className="rounded-md h-64 md:h-48 w-full object-cover"
-                />
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="object-cover h-64 md:h-48 w-full hover:scale-110 transition-all duration-500"
+                  />
+                </div>
                 <div className="mt-4 text-center">
                   <h2 className="text-xl font-semibold capitalize">{title}</h2>
-                  <p className='text-primary font-light mt-2'>{dollarsAmount}</p>
+                  <p className="text-primary font-light mt-2">
+                    {dollarsAmount}
+                  </p>
                 </div>
               </CardContent>
             </Card>
