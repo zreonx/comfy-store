@@ -1,5 +1,10 @@
-import React from 'react'
+import {
+  Filters,
+  ProductsContainer,
+  PaginationContainer,
+} from '@/components';
 
+import { customFetch, type ProductResponse } from '@/utils';
 function Products() {
   return (
     <div>
@@ -8,4 +13,4 @@ function Products() {
   );
 }
 
-export default Products
+export default Products;
