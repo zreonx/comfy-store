@@ -1,15 +1,11 @@
-import { formatAsDollars } from '@/utils';
+import { formatAsDollars, type FormProps } from '@/utils';
 import { useState } from 'react';
 
 import { Label } from './ui/label';
 import { Slider } from './ui/slider';
 
-type FormRangeProps = {
-  name: string;
-  label?: string;
-  defaultValue?: string;
-};
-function FormRange({ name, label, defaultValue }: FormRangeProps) {
+
+function FormRange({ name, label, defaultValue }: FormProps) {
   const step = 1000;
   const maxPrice = 100000;
   const defaultPrice = defaultValue ? Number(defaultValue) : maxPrice;

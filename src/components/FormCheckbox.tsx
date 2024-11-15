@@ -1,13 +1,8 @@
+import { type FormProps } from "@/utils";
 import { Label } from "./ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 
-type FormCheckboxProps = {
-  name: string;
-  label?:string;
-  defaultValue?:string;
-}
-
-function FormCheckbox({name, label, defaultValue}: FormCheckboxProps) {
+function FormCheckbox({name, label, defaultValue}: FormProps) {
   const defaultChecked = defaultValue === 'on' ? true : false;
   return (
     <div className="mb-2 flex justify-between self-end">
