@@ -1,18 +1,38 @@
 export type ProductResponse = {
   data: Product[];
   meta: ProductsMeta;
-}
+};
 
 export type SingleProductResponse = {
   data: Product;
   meta: {};
 };
 
+export type CartItem = {
+  cartID: string;
+  productID: number;
+  image: string;
+  title: string;
+  price: string;
+  amount: number;
+  productColor: string;
+  company: string;
+};
+
+export type CartState = {
+  cartItems: CartItem[];
+  numItemsInCart: number;
+  cartTotal: number;
+  shipping: number;
+  tax: number;
+  orderTotal: number;
+};
+
 export type Product = {
   id: number;
   attributes: {
     category: string;
-    company: string,
+    company: string;
     createdAt: string;
     description: string;
     featured: boolean;
@@ -23,21 +43,21 @@ export type Product = {
     title: string;
     updatedAt: string;
     colors: string[];
-  }
-}
+  };
+};
 
 export type ProductsMeta = {
   categories: string[];
   companies: string[];
   pagination: Pagination;
-}
+};
 
 export type Pagination = {
   page: number;
   pageCount: number;
   pageSize: number;
   total: number;
-}
+};
 
 export type Params = {
   search?: string;
@@ -47,16 +67,15 @@ export type Params = {
   price?: string;
   shipping?: string;
   page?: string;
-}
+};
 
-export type ProductResponseWithParams = ProductResponse & {params: Params}
-
+export type ProductResponseWithParams = ProductResponse & { params: Params };
 
 export type FormProps = {
   name: string;
-  label?:string;
+  label?: string;
   defaultValue?: string;
-}
+};
 
 export type FormInputProps = FormProps & {
   type: string;
@@ -64,4 +83,4 @@ export type FormInputProps = FormProps & {
 
 export type FormSelectProps = FormProps & {
   options: string[];
-}
+};
