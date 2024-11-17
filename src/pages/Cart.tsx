@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 function Cart() {
-  // temp
-  const user = null;
-
+  const { user } = useAppSelector((state) => state.userState);
   const { numItemsInCart } = useAppSelector((state) => state.cartState);
 
   if (numItemsInCart === 0) {
@@ -27,15 +25,14 @@ function Cart() {
         </div>
         <div className="lg:col-span-4 lg:pl-4">
           <CartTotals />
-          {user ? (
-            <Button asChild className="mt-8 w-full">
+
+          <Button asChild className="mt-8 w-full">
+            {user ? (
               <Link to="/checkout">Proceed to checkout</Link>
-            </Button>
-          ) : (
-            <Button asChild className="mt-8 w-full">
+            ) : (
               <Link to="/login">Please login</Link>
-            </Button>
-          )}
+            )}
+          </Button>
         </div>
       </div>
     </>

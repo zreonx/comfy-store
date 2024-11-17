@@ -1,20 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '@/hooks';
+
+import { logoutUser } from '@/features/user/userSlice';
+import { clearCart } from '@/features/cart/cartSlice';
+import { useToast } from '@/hooks/use-toast';
 
 function Header() {
   const navigate = useNavigate();
-  //temp
-  const [user, setUser] = useState<{ username: string } | null>({
-    username: 'demo user',
-  });
+  const dispatch = useAppDispatch();
+
+  const { toast } = useToast();
+
+  const { user } = useAppSelector((state) => state.userState);
 
   const handleLogout = () => {
-    console.log('logout');
-    setUser(null);
-    navigate('/');
+    dispatch(clearCart());
+    dispatch(logoutUser());
+    toast({ description: 'Logged Out' });
+    navigate('/')
   };
-  return ( 
+  return (
     <header>
       <div className="align-element flex justify-center sm:justify-end py-2">
         {/* USER */}
