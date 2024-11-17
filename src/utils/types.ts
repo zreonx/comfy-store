@@ -84,3 +84,12 @@ export type FormInputProps = FormProps & {
 export type FormSelectProps = FormProps & {
   options: string[];
 };
+
+export type Checkout = {
+  name: string;
+  address: string;
+  chargeTotal: number;
+  orderTotal: string;
+  cartItems: CartItem[];
+  numItemsInCart: number;
+};
