@@ -14,7 +14,6 @@ function CartItemsList() {
       {cartItems.map((cartItem) => {
         const {
           cartID,
-          productID,
           title,
           price,
           image,

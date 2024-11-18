@@ -22,8 +22,6 @@ function ComplexPaginationContainer() {
 
   const { search, pathname } = useLocation();
 
-  const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
-
   if (pageCount < 2) return null;
 
   // const renderPagination = pages.map((pageNumber) => {

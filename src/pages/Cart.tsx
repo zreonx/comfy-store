@@ -1,7 +1,6 @@
 import { useAppSelector } from '@/hooks';
 import {
   CartItemsList,
-  CartItemColumns,
   CartTotals,
   SectionTitle,
 } from '@/components';

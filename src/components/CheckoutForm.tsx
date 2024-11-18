@@ -39,7 +39,7 @@ export const action =
     };
 
     try {
-      const result = await customFetch.post(
+      await customFetch.post(
         '/orders',
         {
           data: info,

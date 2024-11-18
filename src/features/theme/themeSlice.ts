@@ -3,9 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export type Theme = 'dark' | 'white' | 'system';
 
-type ThemeState = {
-  theme: Theme;
-};
+// type ThemeState = {
+//   theme: Theme;
+// };
 
 const initializeTheme = (): Theme => {
   const theme = (localStorage.getItem('theme') as Theme) || 'system';
