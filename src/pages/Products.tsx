@@ -22,7 +22,6 @@ function Products() {
       <Filters />
       <ProductsContainer />
       <PaginationContainer />
-      <h1 className="text-4xl">Products</h1>
     </>
   );
 }
