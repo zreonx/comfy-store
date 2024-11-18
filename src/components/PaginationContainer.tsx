@@ -27,9 +27,7 @@ function PaginationContainer() {
   const renderPagination = pages.map((pageNumber) => {
     const isActive = pageNumber === page;
     const url = constructUrl({ pageNumber, search, pathname });
-
-    console.log(url);
-    
+  
 
     return (
       <PaginationItem key={pageNumber}>

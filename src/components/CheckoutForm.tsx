@@ -50,8 +50,7 @@ export const action =
           },
         }
       );
-
-      console.log(result);
+      
       store.dispatch(clearCart());
       toast({description: "order placed"})
       return redirect('/orders')
